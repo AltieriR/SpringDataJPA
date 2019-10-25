@@ -26,11 +26,11 @@ public class Order extends AbstractBean {
 	private Date time;
 
     @OneToOne(optional = false)
-	private Customer customer;
+	private Person customer;
 
     
     @OneToOne(optional = true)
-    private Customer referral;
+    private Person referral;
 
 	@Column(nullable = false, length=30)
     @ElementCollection
@@ -42,12 +42,12 @@ public class Order extends AbstractBean {
     @ElementCollection @Column(length=50)
     private List<Integer> coupon;
     
-	public Customer getCustomer() {
+	public Person getCustomer() {
 		if(customer==null) throw new PersistenceException("Product not found");
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(Person customer) {
 		if(customer==null) throw new PersistenceException("Product must be provided");
 		this.customer = customer;
 	}

@@ -3,20 +3,23 @@ package dev.altieri.springdatajpa.orders.model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.PersistenceException;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
 @Getter
 @Setter
-@NoArgsConstructor
-public class Customer extends AbstractBean {
+public abstract class Person extends AbstractBean {
 	
 	@Column(nullable = false)
 	private String name;

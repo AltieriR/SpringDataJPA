@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.altieri.springdatajpa.orders.model.Customer;
+import dev.altieri.springdatajpa.orders.model.Person;
 import dev.altieri.springdatajpa.orders.repository.CustomerRepository;
 
 @RestController
@@ -23,12 +23,12 @@ public class CustomerController {
 	}
 
 	@GetMapping
-	public List<Customer> getAllUsers() {
+	public List<Person> getAllUsers() {
 		return customerDao.findAll();
 	}
 
 	@GetMapping(path="/{name}")
-	public List<Customer> getCustomersByName(@PathVariable("name") String n) {
+	public List<Person> getCustomersByName(@PathVariable("name") String n) {
 		return customerDao.findCustomerByName(n);
 	}
 }
