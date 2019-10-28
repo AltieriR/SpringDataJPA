@@ -15,7 +15,7 @@ import dev.altieri.springdatajpa.orders.repository.CustomerRepository;
 @RequestMapping("customer")
 public class CustomerController {
 	
-	private CustomerRepository customerDao;
+	private static CustomerRepository customerDao;
 
 	@Autowired	
 	public CustomerController(CustomerRepository customerDao) {
@@ -30,5 +30,13 @@ public class CustomerController {
 	@GetMapping(path="/{name}")
 	public List<Person> getCustomersByName(@PathVariable("name") String n) {
 		return customerDao.findCustomerByName(n);
+	}
+	
+	public static Person teste() {
+		/*LegalPerson legalPerson = new LegalPerson();
+		legalPerson.setLegalEntityIdentifier("FSDFNBOI32");
+		customerDao.save(legalPerson);
+		return legalPerson;*/
+		return null;
 	}
 }

@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -16,7 +17,7 @@ import lombok.Setter;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
+@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING)
 @Getter
 @Setter
 public abstract class Person extends AbstractBean {
