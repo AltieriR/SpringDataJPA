@@ -19,6 +19,8 @@ public class OrderProduct extends AbstractBean {
 	
 	@ManyToOne(optional=false)
 	private Order order;
+	
+	private int quantity;
 
 	public Product getProduct() {
 		if(product==null) throw new PersistenceException("Product not found");
@@ -38,6 +40,14 @@ public class OrderProduct extends AbstractBean {
 	public void setOrder(Order order) {
 		if(order==null) throw new PersistenceException("Order must be provided");
 		this.order = order;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 }

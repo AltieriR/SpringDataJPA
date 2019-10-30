@@ -61,5 +61,37 @@ public class Order extends AbstractBean {
 		if(paymentMethod==null || paymentMethod.size() < 2) throw new PersistenceException("Payment must be provided");
 		this.paymentMethod = paymentMethod;
 	}
+
+	public Date getTime() {
+		return time;
+	}
+
+	public Person getReferral() {
+		return referral;
+	}
+
+	public List<Integer> getPaymentTerm() {
+		return paymentTerm;
+	}
+
+	public List<Integer> getCoupon() {
+		return coupon;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public void setReferral(Person referral) {
+		this.referral = referral;
+	}
+
+	public void setPaymentTerm(List<Integer> paymentTerm) {
+		this.paymentTerm = paymentTerm;
+	}
+
+	public void setCoupon(List<Integer> coupon) {
+		this.coupon = coupon;
+	}
 	
 }

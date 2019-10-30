@@ -30,4 +30,20 @@ public class Product extends AbstractBean {
 		this.name = name;
 	}
 
+	public Long getQuantity() {
+		return quantity;
+	}
+
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+
 }

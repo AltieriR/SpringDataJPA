@@ -1,1 +1,1 @@
-package dev.altieri.springdatajpa.orders.person;
+package dev.altieri.springdatajpa.orders.integration;
